@@ -1,0 +1,8 @@
+name: QuickCMS
+description: "Quick Scaffolding of most popular plugins including tailwind and vuejs setup"
+author: Fytinnovations
+homepage: "http://fytinnovations.com/"
+code: quickcms
+require:
+  - Acme.User
+  - Acme.Blog
