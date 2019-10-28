@@ -1,44 +1,44 @@
 description = "Default layout"
 ==
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <title>Quick CMS - {{ this.page.title }}</title>
-    <meta name="description" content="{{ this.page.meta_description }}">
-    <meta name="title" content="{{ this.page.meta_title }}">
+    <meta name="description" content="{{ this.page.description }}">
+    <meta name="title" content="{{ this.page.title }}">
     <meta name="author" content="Quick CMS">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Quick CMS">
     <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+    <link rel="manifest" href="manifest.json" />
     <link href="{{ 'assets/css/app.css'|theme }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     {% styles %}
 </head>
 
-<body>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <div class="flex md:flex-row-reverse flex-wrap">
 
-    <!-- Header -->
-    <header id="layout-header">
-        {% partial 'site/header' %}
-    </header>
+        <!--Main Content-->
+        <div class="w-full md:w-4/5 bg-gray-100" id="layout-content">
+            <main class="container bg-gray-100 pt-16 px-6">
+                {% page %}
+            </main>
+        </div>
 
-    <!-- Content -->
-    <section id="layout-content">
-        {% page %}
-    </section>
-
-    <!-- Footer -->
-    <footer id="layout-footer">
-        {% partial 'site/footer' %}
-    </footer>
+        <!--Sidebar-->
+        {% partial 'site/sidebar' %}
+    </div>
 
     <!-- Scripts -->
     <script src="{{ [
         '@jquery',
         '@framework',
         '@framework.extras',
-        'assets/js/app.js'
+        'assets/js/app.js', 
     ]|theme }}"></script>
 </body>
 
