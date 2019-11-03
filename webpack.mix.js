@@ -1,6 +1,5 @@
 let mix = require('laravel-mix');
-const tailwindcss = require('tailwindcss'),
-  workboxPlugin = require('workbox-webpack-plugin');
+const tailwindcss = require('tailwindcss')
 require('laravel-mix-purgecss');
 
 /*
@@ -14,6 +13,7 @@ require('laravel-mix-purgecss');
  |
  */
 mix.js('src/js/app.js', 'assets/js')
+  .script('src/js/service-worker.js','assets/js')
   .sass('src/sass/app.scss', 'assets/css')
   .options({
     processCssUrls: false,
